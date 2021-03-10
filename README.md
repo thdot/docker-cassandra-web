@@ -1,9 +1,9 @@
-# cassandra-web-docker
+# [dcagatay/cassandra-web]((https://hub.docker.com/r/dcagatay/cassandra-web))
 
-A simple Docker image built from [cassandra-web](https://github.com/avalanche123/cassandra-web) web UI
+A simple/small/Alpine based Docker image built from [cassandra-web](https://github.com/avalanche123/cassandra-web) web UI.
 
-## Supported Tags
-- `0.5.0` 
+## [Tags](https://hub.docker.com/r/dcagatay/cassandra-web)
+- `latest`, `0.5.0` 
 
 ## Quick Start
 
@@ -35,26 +35,10 @@ docker run -d -p 3000:3000 \
 
 ### Docker Compose
 
-```yaml
-version: "2.1"
-services:
-  cassandra:
-    image: cassandra:3.11.4
-    expose:
-    - 7000
-    - 7001
-    - 7199
-    - 9042
-    - 9160
-  cassandra-web:
-    image: markusgulden/cassandra-web
-    depends_on:
-    - cassandra
-    environment:
-      CASSANDRA_HOST_IPS: 127.0.0.1
-      CASSANDRA_PORT: 9042
-      CASSANDRA_USER: cassandra
-      CASSANDRA_PASSWORD: cassandra
-    ports:
-    - 3000:3000
-```
+Provided with the repo. Since *cassandra-web* only works with IP address, docker-compose creates network accordingly and gives *cassandra* container a static IP address, which is used on *cassandra-web* configuration.
+
+You can tryout Web UI by just `docker-compose up -d`.
+
+## Credits
+
+It is derived from Debian based image [markusgulden/cassandra-web](https://hub.docker.com/r/markusgulden/cassandra-web).
