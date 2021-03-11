@@ -1,5 +1,5 @@
 FROM ruby:2.6.2-alpine
-LABEL maintainer 'Markus Gulden <mg@gulden.consulting>'
+LABEL maintainer 'Doğukan Çağatay <dcagatay@gmail.com>'
 
 ENV VERSION 0.5.0
 
