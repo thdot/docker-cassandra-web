@@ -16,7 +16,7 @@ The container uses environment variables for configuration. Following parameters
 *  CASSANDRA_PORT
    *  Port exposed by the nodes
    *  Default: 9042
-*  CASSANDRA_USER
+*  CASSANDRA_USERNAME
    *  Default: cassandra
 *  CASSANDRA_PASSWORD
    *  Default: cassandra
@@ -27,9 +27,9 @@ The container uses environment variables for configuration. Following parameters
 docker run -d -p 3000:3000 \
     -e CASSANDRA_HOST_IPS=127.0.0.1 \
     -e CASSANDRA_PORT=9042 \
-	-e CASSANDRA_USER=cassandra \
-	-e CASSANDRA_PASSWORD=cassandra \
-	markusgulden/cassandra-web
+    -e CASSANDRA_USERNAME=cassandra \
+    -e CASSANDRA_PASSWORD=cassandra \
+	dcagatay/cassandra-web
 ```
 
 
