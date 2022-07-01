@@ -1,9 +1,9 @@
-# [dcagatay/cassandra-web]((https://hub.docker.com/r/dcagatay/cassandra-web))
+## [hub.docker.com/thdot/cassandra-web](https://hub.docker.com/r/thdot/cassandra-web)
 
 A simple/small/Alpine based Docker image built from [cassandra-web](https://github.com/avalanche123/cassandra-web) web UI.
 
-## [Tags](https://hub.docker.com/r/dcagatay/cassandra-web)
-- `latest`, `0.5.0` 
+## [Tags](https://hub.docker.com/r/thdot/cassandra-web)
+- `latest`, `0.5.0`
 
 ## Quick Start
 
@@ -29,7 +29,7 @@ docker run -d -p 3000:3000 \
     -e CASSANDRA_PORT=9042 \
     -e CASSANDRA_USERNAME=cassandra \
     -e CASSANDRA_PASSWORD=cassandra \
-	dcagatay/cassandra-web
+	thdot/cassandra-web
 ```
 
 
@@ -41,4 +41,5 @@ You can tryout Web UI by just `docker-compose up -d`.
 
 ## Credits
 
-It is derived from Debian based image [markusgulden/cassandra-web](https://hub.docker.com/r/markusgulden/cassandra-web).
+It is derived from the [image of Doğukan Çağatay](https://hub.docker.com/r/dcagatay/cassandra-web), which
+itself is based on an [image from MG Cloud Consultants](https://hub.docker.com/r/markusgulden/cassandra-web).

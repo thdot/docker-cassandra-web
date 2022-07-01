@@ -1,15 +1,11 @@
 FROM ruby:2.6.2-alpine
-LABEL maintainer 'Doğukan Çağatay <dcagatay@gmail.com>'
+LABEL maintainer 'Thorsten Horstmann <mail@thdot.de>'
 
 ENV VERSION 0.5.0
 
 RUN apk add --no-cache --update --virtual=build-dependencies build-base linux-headers gcc g++ \
     && gem install cassandra-web -v ${VERSION} \
     && apk del build-dependencies \
-    && apk add --no-cache --update bash \
     && rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
-COPY run.sh /
-RUN chmod +x /run.sh
-
-CMD ["/run.sh"]
+CMD ["/bin/sh", "-xc", "exec cassandra-web --hosts ${CASSANDRA_HOST_IPS-127.0.0.1} --port ${CASSANDRA_PORT-9042} --username ${CASSANDRA_USERNAME-cassandra} --password ${CASSANDRA_PASSWORD-cassandra}" ]
