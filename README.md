@@ -20,6 +20,9 @@ The container uses environment variables for configuration. Following parameters
    *  Default: cassandra
 *  CASSANDRA_PASSWORD
    *  Default: cassandra
+*  CASSANDRA_WEB_BIND
+   * ip:port or path for cassandra web to bind on
+   * Default: 0.0.0.0:3000
 
 ### Docker CLI
 
